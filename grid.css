@@ -18,7 +18,7 @@
 .col {
 	display: block;
 	float:left;
-	margin: 2% 2% 2% 2%;
+	margin: 2%;
 }
 
 .col.float-opposite {float: right;}
@@ -30,6 +30,7 @@
 
 .gutters .col:first-child {margin-left: 0;}
 .gutters .col:last-child {margin-right: 0;}
+
 
 .full {width: 96%;}
 .no-marg .full,.gutters .full {width: 100%;}
@@ -72,7 +73,9 @@
 
 
 /* Breakpoint Adjustments */
+
 @media only screen and (max-width: 768px) {
+	.container {width: 98%;}
 	.half,
 	.third,
 	.fourth,
@@ -110,11 +113,16 @@
 	.gutters .three-fifths,
 	.gutters .four-fifths,
 	.gutters .five-sixths {
-		width: 48%;
+		width: 46%;
+		margin: 2%;
 	}
+	.gutters .col:first-child {margin-left: 2%;}
+	.gutters .col:last-child {margin-right: 2%;}
+	.gutters .full {width: 96%;}
+	
 }
 
-@media only screen and (max-width: 640px) {
+@media only screen and (max-width: 480px) {
 	.half,
 	.third,
 	.fourth,
@@ -126,9 +134,9 @@
 	.three-fifths,
 	.four-fifths,
 	.five-sixths {
-		width: 92%;
+		width: 96%;
 	}
-	.no-marg .half, .gutters half,
+	.no-marg .half, .gutters .half,
 	.no-marg .third, .gutters .third,
 	.no-marg .fourth, .gutters .fourth,
 	.no-marg .fifth, .gutters .fifth,
@@ -140,5 +148,12 @@
 	.no-marg .four-fifths, .gutters .four-fifths,
 	.no-marg .five-sixths, .gutters .five-sixths {
 		width: 100%;
+	}
+	.gutters .col {
+		margin-right: 0;
+		margin-left: 0;
+	}
+	.col.float-opposite {
+		float: left;
 	}
 }
